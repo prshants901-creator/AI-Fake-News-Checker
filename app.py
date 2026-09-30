@@ -13,7 +13,7 @@ CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 html, body, [class*="css"], .stMarkdown, p, label { font-family: 'Poppins', sans-serif; }
-.stApp { background: radial-gradient(circle at 15% 10%, #1e1b4b 0%, #0b1020 45%, #050814 100%); }
+.stApp { background: radial-gradient(circle at 15% 10%, #3730a3 0%, #1e1b4b 40%, #0f172a 100%); }
 #MainMenu, footer { visibility: hidden; }
 header[data-testid="stHeader"] { background: transparent; }
 section[data-testid="stSidebar"] { background: rgba(15, 23, 42, 0.92); border-right: 1px solid rgba(255,255,255,0.08); }
@@ -35,13 +35,28 @@ section[data-testid="stSidebar"] { background: rgba(15, 23, 42, 0.92); border-ri
 
 .section-label { color: #cbd5e1; font-weight: 600; margin: 1.1rem 0 0.3rem; }
 
-.stTextArea textarea {
-  background: rgba(255,255,255,0.05) !important; color: #e2e8f0 !important;
-  border: 1px solid rgba(255,255,255,0.12) !important; border-radius: 16px !important;
+.stTextArea textarea,
+.stTextArea div[data-baseweb="textarea"],
+.stTextArea div[data-baseweb="base-input"] {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #ffffff;
+}
+.stTextArea div[data-baseweb="textarea"] {
+  border: 1px solid rgba(148,163,184,0.4) !important;
+  border-radius: 16px !important;
   transition: all .25s ease;
 }
-.stTextArea textarea:focus {
-  border-color: #818cf8 !important; box-shadow: 0 0 0 3px rgba(129,140,248,0.25) !important;
+.stTextArea div[data-baseweb="textarea"]:focus-within {
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 3px rgba(129,140,248,0.3) !important;
+}
+.stTextArea textarea { font-size: 1rem; }
+.stTextArea textarea::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 1;
 }
 
 .stButton > button {
